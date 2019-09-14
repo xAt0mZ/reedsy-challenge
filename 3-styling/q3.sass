@@ -1,0 +1,100 @@
+$soft-grey: #faf9f4
+$strong-yellow: #edc002
+$soft-white: #ffee9b
+$grey: #cccccc
+$medius-radius: 10px
+$large-radius: 20px
+
+body
+  background-color: $soft-grey
+  font-size: 1.4em
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  display: flex
+  flex-direction: column
+  margin: 0px
+
+.top-actions
+  margin: 3vh 11vw 3vh 9vw
+  flex: 1 0 auto
+  .container
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    .top-logo
+      background-color: $grey
+      border-radius: $medius-radius
+      margin-left: 2.5vw
+      padding: 1vh 6.5vw
+    .top-menu
+      margin-top: 0.5vh
+      ul
+        display: inline
+        li
+          border-radius: $medius-radius
+          display: inline
+          padding: 1.2vh 1vw
+          font-size: 1.2em
+        li.active
+          background-color: $strong-yellow
+          color: $soft-white
+
+.main
+  margin: 1vh 9.2vw 0 9.2vw
+  background-color: white
+  border-radius: 20px 20px 0 0
+  box-shadow: 0 0 20px #cccccc
+  .container
+    h1
+      padding: 0 2vw
+      font-weight: normal
+      font-size: 2.8em
+    .featured-book
+      background-color: $soft-grey
+      display: grid
+      grid-template-rows: auto
+      grid-template-columns: auto auto 12%
+      grid-template-areas: ". . recommended" "cover book book"
+      .recommended
+        grid-area: recommended
+        border-bottom-left-radius: $large-radius
+        background-color: $strong-yellow
+        color: $soft-white
+        padding: 1vh 1vw
+      img
+        grid-area: cover
+        border-radius: $medius-radius
+      .book-info
+        grid-area: book
+        
+        .title
+          color: blue
+        .author
+          color: red
+        .synopsis
+          color: green
+
+    .top-voted
+      display: flex
+      flex-direction: row
+      .books-list
+        .book
+          img
+            border-radius: $large-radius
+
+footer
+  background-color: #292929
+  color: white
+  font-size: 90%
+  position: fixed
+  left: 0
+  bottom: 0
+  width: 100%
+  .container
+    padding: 0.5vh 6.5vw
+    ul
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      padding: 0vh 30vw
+      li
+        display: inline

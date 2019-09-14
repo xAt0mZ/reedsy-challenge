@@ -1,0 +1,113 @@
+body {
+  background-color: #faf9f4;
+  font-size: 1.4em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.top-actions {
+  margin: 3vh 11vw 3vh 9vw;
+  flex: 1 0 auto;
+}
+.top-actions .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.top-actions .container .top-logo {
+  background-color: #cccccc;
+  border-radius: 10px;
+  margin-left: 2.5vw;
+  padding: 1vh 6.5vw;
+}
+.top-actions .container .top-menu {
+  margin-top: 0.5vh;
+}
+.top-actions .container .top-menu ul {
+  display: inline;
+}
+.top-actions .container .top-menu ul li {
+  border-radius: 10px;
+  display: inline;
+  padding: 1.2vh 1vw;
+  font-size: 1.2em;
+}
+.top-actions .container .top-menu ul li.active {
+  background-color: #edc002;
+  color: #ffee9b;
+}
+
+.main {
+  margin: 1vh 9.2vw 0 9.2vw;
+  background-color: white;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 0 20px #cccccc;
+}
+.main .container h1 {
+  padding: 0 2vw;
+  font-weight: normal;
+  font-size: 2.8em;
+}
+.main .container .featured-book {
+  background-color: #faf9f4;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto 12%;
+  grid-template-areas: ". . recommended" "cover book book";
+}
+.main .container .featured-book .recommended {
+  grid-area: recommended;
+  border-bottom-left-radius: 20px;
+  background-color: #edc002;
+  color: #ffee9b;
+  padding: 1vh 1vw;
+}
+.main .container .featured-book img {
+  grid-area: cover;
+  border-radius: 10px;
+}
+.main .container .featured-book .book-info {
+  grid-area: book;
+}
+.main .container .featured-book .book-info .title {
+  color: blue;
+}
+.main .container .featured-book .book-info .author {
+  color: red;
+}
+.main .container .featured-book .book-info .synopsis {
+  color: green;
+}
+.main .container .top-voted {
+  display: flex;
+  flex-direction: row;
+}
+.main .container .top-voted .books-list .book img {
+  border-radius: 20px;
+}
+
+footer {
+  background-color: #292929;
+  color: white;
+  font-size: 90%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+footer .container {
+  padding: 0.5vh 6.5vw;
+}
+footer .container ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0vh 30vw;
+}
+footer .container ul li {
+  display: inline;
+}
+
+/*# sourceMappingURL=q3.css.map */

@@ -5,10 +5,10 @@
 One of the main commercial project in AngularJS I contributed to is [Portainer.io](https://portainer.io).
 Portainer is an open-source project that helps making Docker management easy. Things short, it is a web UI, deployed on docker, that uses docker API to allow users do anything (or nearly anything) they want against their docker env, using a UI instead of using shell commands.
 
-I'm working with the Portainer team since August 2018, and I am currently the front-end lead of the project.
+I'm working with the Portainer team since August 2018, and I am currently the frontend tech lead of the project.
 Source code can be found [here](https://github.com/portainer/portainer).
 
-Basically, Portainer is developed using AngularJS 1.5, still using old-fashionned JS for legacy parts (progressive migration to ES6+ AngularJS).
+Basically, Portainer is developed using AngularJS 1.5, still using old JS with functions for legacy parts (progressive migration to ES6+ classes).
 
 ## 2. General
 
@@ -86,9 +86,7 @@ More examples and detailed explanations can be found [here](https://trello.com/c
 
 ## 3. Styling
 
-Given the HTML file **front-end/q3/q3.html**, implement the styling so the page matches the image below.
-
-![Styling](./front-end/q3/images/result.jpg "Styling")
+Done in [3-styling](./3-styling).
 
 #### Bonus
 - Implement styling rules that consider different screen sizes.

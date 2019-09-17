@@ -10,6 +10,10 @@ Source code can be found [here](https://github.com/portainer/portainer).
 
 Basically, Portainer is developed using AngularJS 1.5, still using old JS with functions for legacy parts (progressive migration to ES6+ classes).
 
+This projects helped me improve myself on many skills:
+- AngularJS / Golang / Docker (hard skills)
+- Communication / Organization (soft skills)
+
 ## 2. General
 
 ##### 2.1. What kind of front end projects do you enjoy working on? Why?

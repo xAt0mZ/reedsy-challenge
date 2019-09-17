@@ -2,16 +2,19 @@ $soft-grey: #faf9f4
 $strong-yellow: #edc002
 $soft-white: #ffee9b
 $grey: #cccccc
-$medius-radius: 10px
+$black: #292929
+$small-radius: 10px
+$medium-radius: 15px
 $large-radius: 20px
 
 body
   background-color: $soft-grey
-  font-size: 1.4em
+  font-size: 1.4rem
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
   display: flex
   flex-direction: column
-  margin: 0px
+  margin: 0
+  padding-bottom: 8vh
 
 .top-actions
   margin: 3vh 11vw 3vh 9vw
@@ -22,7 +25,7 @@ body
     justify-content: space-between
     .top-logo
       background-color: $grey
-      border-radius: $medius-radius
+      border-radius: $small-radius
       margin-left: 2.5vw
       padding: 1vh 6.5vw
     .top-menu
@@ -30,7 +33,7 @@ body
       ul
         display: inline
         li
-          border-radius: $medius-radius
+          border-radius: $small-radius
           display: inline
           padding: 1.2vh 1vw
           font-size: 1.2em
@@ -39,50 +42,99 @@ body
           color: $soft-white
 
 .main
-  margin: 1vh 9.2vw 0 9.2vw
+  margin: 1vh 10vw 0 10.1vw
   background-color: white
   border-radius: 20px 20px 0 0
-  box-shadow: 0 0 20px #cccccc
+  box-shadow: 0 0 20px $grey
   .container
     h1
       padding: 0 2vw
       font-weight: normal
       font-size: 2.8em
     .featured-book
+      padding-bottom: 4vh
       background-color: $soft-grey
       display: grid
       grid-template-rows: auto
-      grid-template-columns: auto auto 12%
-      grid-template-areas: ". . recommended" "cover book book"
+      grid-template-columns: auto auto 11.5%
+      grid-template-areas: ". . recommended" "cover book-info book-info"
       .recommended
         grid-area: recommended
-        border-bottom-left-radius: $large-radius
+        border-bottom-left-radius: $medium-radius
         background-color: $strong-yellow
         color: $soft-white
-        padding: 1vh 1vw
+        padding: 0.6vh 0vw 0.6vh 0.7vw
+        font-size: 1em
       img
         grid-area: cover
-        border-radius: $medius-radius
+        border-radius: $medium-radius
+        margin-left: 2.4vw
+        width: 20.5vw
+        box-shadow: 0 0 10px $grey
       .book-info
-        grid-area: book
-        
+        grid-area: book-info
+        margin: 0 3vw 0 1.5vw
         .title
-          color: blue
+          font-size: 2.4em
+          margin: 0px
+          font-weight: bold
         .author
-          color: red
+          font-size: 1.1em
         .synopsis
-          color: green
+          font-size: 1.05em
+          padding-top: 1vh
+          line-height: 1.25em
 
     .top-voted
-      display: flex
-      flex-direction: row
+      padding-bottom: 5vh
+      h2
+        margin: 6.5vh 0 3vh 2.3vw
+        font-size: 2.2em
       .books-list
+        margin: 0 1.5vw
+        display: flex
+        flex-direction: row
+        justify-content: space-between
         .book
+          flex: 1 1 33%
+          margin: 0 0.9vw
+          display: grid
+          grid-template-rows: auto
+          grid-template-columns: 27% auto 27%
+          grid-template-areas: ". cover position" "book-info book-info book-info"
+          background-color: $soft-grey
+          border-radius: $small-radius
+          padding: 2vh 1vw
+          box-shadow: 0 0 10px $soft-grey
+          .position
+            grid-area: position
+            text-align: right
+            margin-top: 1vh
+            span
+              color: $strong-yellow
+              font-weight: bold
+              border: 3px solid $strong-yellow
+              padding: 10px 17px
+              border-radius: 50%
           img
-            border-radius: $large-radius
+            grid-area: cover
+            width: 10.2vw
+            border-radius: $medium-radius
+            box-shadow: 0 0 10px $grey
+          .book-info
+            grid-area: book-info
+            .title
+              font-size: 1.1em
+              margin: 2vh 0 0.5vh 0
+            .synopsis
+              padding: 3vh 0.2vw 0 0
+              p
+                margin: 0
+                font-size: 0.95em
+                line-height: 1.3em
 
 footer
-  background-color: #292929
+  background-color: $black
   color: white
   font-size: 90%
   position: fixed

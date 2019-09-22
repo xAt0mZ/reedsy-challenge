@@ -1,0 +1,20 @@
+/* HeroesComponent's private CSS styles */
+.grid
+  display: grid
+  grid-template-rows: auto
+  grid-template-columns: auto auto
+  grid-template-areas: "book-info book-cover"
+  .book-info
+    grid-area: book-info
+    .title
+      display: flex
+      flex-direction: row
+      align-items: center
+      h3
+        color: red
+    .author
+      font-style: italic
+    .synopsis
+      color: green
+  .book-cover
+    grid-area: book-cover

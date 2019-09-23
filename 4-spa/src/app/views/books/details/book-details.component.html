@@ -1,11 +1,20 @@
-<div class="hero-detail" ng-if="$ctrl.hero">
-  <h2>{{$ctrl.hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{$ctrl.hero.id}}</div>
-  <div>
-    <label>name:
-      <input ng-model="$ctrl.hero.name" placeholder="name"/>
-    </label>
+<div class="container">
+  {{ $ctrl.book.Title }}
+  <span>
+    Upvoted {{ $ctrl.book.UpVotes }} times
+  </span>
+  <button ng-class="{active: $ctrl.book.UpVoted}">
+    {{ $ctrl.book.UpVoted ? 'Upvoted' : 'Upvote' }}
+  </button>
+  <span class="author">
+    {{ $ctrl.book.Author }}
+  </span>
+  <div class="book-cover">
+    <img src="{{ $ctrl.book.Cover }}">
   </div>
-  <button ng-click="$ctrl.goBack()">go back</button>
-  <button ng-click="$ctrl.save()">save</button>
+  Synopsis
+  <p>
+    {{ $ctrl.book.Synopsis }}
+  </p>
+  Rating: {{ $ctrl.book.Rating }}/10
 </div>

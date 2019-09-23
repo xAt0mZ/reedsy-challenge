@@ -1,20 +1,29 @@
 import { NgModule } from 'angular-ts-decorators';
+import * as Bootstrap from 'angular-ui-bootstrap';
+
+import './bootstrap-override.css';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import './styles.css';
 
 import { BooksComponent } from './views/books/books.component';
+import { BookDetailsComponent } from './views/books/details/book-details.component';
 
 import { BookService } from './services/book.service';
+
+import { TruncatePipe } from './services/filters/truncate.filter';
 
 @NgModule({
   id: 'AppModule',
   imports: [
-    AppRoutingModule
+    AppRoutingModule,
+    Bootstrap
   ],
   declarations: [
     AppComponent,
-    BooksComponent
+    BooksComponent,
+    BookDetailsComponent,
+    TruncatePipe
   ],
   providers: [
     BookService,

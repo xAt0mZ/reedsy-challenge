@@ -5,13 +5,13 @@ import { BooksComponent } from './views/books/books.component';
 import { BookDetailsComponent } from './views/books/details/book-details.component';
 
 export interface UiState extends Ng1StateDeclaration {
-  component?: any;
+  linkedComponent?: any;
 }
 
 const routes: UiState[] = [
   { name: 'index', url: '', redirectTo: 'books' },
-  { name: 'books', url: '/books', component: BooksComponent },
-  { name: 'booksDetails', url: '/books/{id}', component: BookDetailsComponent },
+  { name: 'books', url: '/books', linkedComponent: BooksComponent },
+  { name: 'books.details', url: '/:slug', linkedComponent: BookDetailsComponent },
 ];
 
 @NgModule({
@@ -28,8 +28,12 @@ export class AppRoutingModule {
 }
 
 function getNg1StateDeclaration(state: UiState) {
-  if (state.component && typeof state.component !== 'string') {
-    state.component = getTypeName(state.component);
+  if (state.linkedComponent && typeof state.linkedComponent !== 'string') {
+    state.views = {
+      'content@': {
+        component: getTypeName(state.linkedComponent)
+      }
+    };
   }
   return state;
 }

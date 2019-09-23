@@ -1,28 +1,30 @@
-<h2>Top books of all time</h2>
-<div>
-  <div ng-repeat="book in $ctrl.books">
-    <div class="grid">
-      <div class="book-info">
-        <div class="title">
-          <h3>{{ $index+1 }}. {{ book.Title }}</h3> ({{ book.Rating }} / 10)
-        </div>
-        <span class="author">
-          {{ book.Author }}
-        </span>
-        <p>
-          {{ book.Synopsis }}
-        </p>
-        <div>
-          <button ng-class="{active: book.UpVoted}">
-            {{ book.UpVoted ? 'Upvoted' : 'Upvote' }}
-          </button>
-          <span>
-              Upvoted {{ book.UpVotes }} times
+<div class="container">
+  <h2>Top books of all time</h2>
+  <div>
+    <div ng-repeat="book in $ctrl.books">
+      <div class="grid">
+        <div class="book-info">
+          <div class="title">
+            <a ui-sref="books.details({ slug: book.Slug })" ui-sref-ops="{reload: true}"><h3>{{ $index+1 }}. {{ book.Title }}</h3> ({{ book.Rating }}/10)</a>
+          </div>
+          <span class="author">
+            {{ book.Author }}
           </span>
+          <p>
+            {{ book.Synopsis | truncate: 200 }}
+          </p>
+          <div>
+            <button ng-class="{active: book.UpVoted}">
+              {{ book.UpVoted ? 'Upvoted' : 'Upvote' }}
+            </button>
+            <span>
+              Upvoted {{ book.UpVotes }} times
+            </span>
+          </div>
         </div>
-      </div>
-      <div class="book-cover">
-        <img src="{{ book.Cover }}">
+        <div class="book-cover">
+          <img src="{{ book.Cover }}">
+        </div>
       </div>
     </div>
   </div>

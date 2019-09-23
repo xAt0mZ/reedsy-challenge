@@ -9,8 +9,7 @@ import { BookService } from '../../../services/book.service';
   styles: [require('./book-details.component.scss')]
 })
 export class BookDetailsComponent implements OnInit {
-  @Input() book: BookViewModel;
-
+  private book: BookViewModel;
   private slug: string;
   /*@ngInject*/
   constructor(
@@ -19,23 +18,16 @@ export class BookDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    this.slug = this.$state.params.slug;
+    this.getBook();
   }
 
-  // ngOnInit(): void {
-  //   this.slug = this.$state.params.slug;
-  //   this.getBook();
-  // }
-
-  // getBook() {
-  //   return this.$async(this.getBookAsync);
-  // }
-
-  // async getBookAsync
-
-  // getbook(): void {
-  //   const id = +this.$state.params.id;
-  //   this.bookService.getbook(id)
-  //     .then(book => this.book = book);
-  // }
+  async getBook() {
+    try {
+      const book = await this.bookService.getBook(this.slug);
+      this.book = book;
+    } catch (error) {
+      throw error;
+    }
+  }
 }

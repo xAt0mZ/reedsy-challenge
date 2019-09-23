@@ -18,7 +18,6 @@ src/
     models/       --> app views ("pages" of the app)
   assets/         --> static assets
   environments/   --> environments descripting files
-  styles/
   index.html      --> app layout file (main html file of the app)
   main.ts         --> main application module
   tests.ts

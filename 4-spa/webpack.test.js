@@ -28,6 +28,10 @@ module.exports = {
         use: ['css-loader', 'resolve-url-loader', 'sass-loader']
       },
       {
+        test: /\.sass$/,
+        use: ['css-loader', 'resolve-url-loader', 'sass-loader']
+      },
+      {
         test: /\.ts$/,
         exclude: /node_modules/,
         use: [

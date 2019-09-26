@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from 'angular-ts-decorators';
- 
+
 @Pipe({name: 'truncate'})
 export class TruncatePipe implements PipeTransform {
   public transform(text: string, length: number, end: string) {

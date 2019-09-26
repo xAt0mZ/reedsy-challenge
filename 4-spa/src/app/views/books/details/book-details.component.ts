@@ -6,7 +6,7 @@ import { BookService } from '../../../services/book.service';
 @Component({
   selector: 'book-details',
   template: require('./book-details.component.html'),
-  styles: [require('./book-details.component.scss')]
+  styles: [require('./book-details.component.sass')]
 })
 export class BookDetailsComponent implements OnInit {
   private book: BookViewModel;

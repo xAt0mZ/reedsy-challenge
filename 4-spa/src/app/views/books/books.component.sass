@@ -1,20 +1,60 @@
-/* HeroesComponent's private CSS styles */
-.grid
-  display: grid
-  grid-template-rows: auto
-  grid-template-columns: auto auto
-  grid-template-areas: "book-info book-cover"
-  .book-info
-    grid-area: book-info
+/* BooksComponent's private CSS styles */
+// imports
+@import '../../bootstrap-override.sass'
+
+// mixins
+@mixin vote-btn($color, $bg-color, $border-color)
+  border-radius: .75rem
+  &:focus
+    box-shadow: none
+  &.hover, &:hover,
+  &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active
+    color: $color
+    background-color: $bg-color
+    border-color: $border-color
+    &:focus
+      box-shadow: none
+
+@mixin upvote-btn
+  @extend .btn
+  @extend .btn-primary
+  @include vote-btn(color("white"), theme-color("secondary"), theme-color("secondary"))
+  color: color("white")
+
+@mixin upvoted-btn
+  @extend .btn
+  @extend .btn-outline-primary
+  @include vote-btn(theme-color("secondary"), color("white"), theme-color("secondary"))
+  background-color: color("white")
+
+// style
+.container
+  .page-head
+    padding: 3%
+    text-align: center
+    font-size: 3rem
+    font-weight: bold
+    color: theme-color("primary")
+  .books .book:nth-child(odd)
+    background-color: color("white")
+  .book
+    padding: 3%
     .title
-      display: flex
-      flex-direction: row
-      align-items: center
-      h3
-        color: red
+      font-size: 1.8rem
+      font-weight: bold
+      color: theme-color("secondary")
+    .rating
+      color: gray("900")
     .author
       font-style: italic
     .synopsis
-      color: green
-  .book-cover
-    grid-area: book-cover
+      line-height: 1.5rem
+    .upvote-btn
+      @include upvote-btn
+    .upvoted-btn
+      @include upvoted-btn
+    .book-cover
+      padding: 5%
+      border-radius: 1em
+      width: 100%
+      height: 100%

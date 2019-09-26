@@ -1,0 +1,24 @@
+.nav, .pagination, .carousel, .panel-title a
+  cursor: pointer
+
+$body-bg: #fafaf3
+$font-size-base: 1.3rem
+$border-radius: .50rem
+$theme-colors: ("primary": #ddaa43, "secondary": #a97721, "light": #ffffff, "dark": #ffffff)
+
+@import "../../node_modules/bootstrap/scss/bootstrap"
+
+@include media-breakpoint-up(xl)
+  .container
+    max-width: 970px
+
+.container
+  box-shadow: 0 0 10px 5px #f0f0e9
+  padding: 0px
+
+.row
+  margin: 0
+
+.btn
+  border-width: 3px
+  font-weight: bold

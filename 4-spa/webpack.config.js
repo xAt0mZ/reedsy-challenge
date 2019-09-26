@@ -54,15 +54,21 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.css$/,
-          use: [MiniCssExtractPlugin.loader, 'css-loader', 'resolve-url-loader']
+          use: ['style-loader', 'css-loader']
         },
         {
-          test: /\.scss$/,
-          use: [MiniCssExtractPlugin.loader, 'css-loader', 'resolve-url-loader', 'sass-loader']
-        },
-        {
-          test: /\.sass$/,
-          use: [MiniCssExtractPlugin.loader, 'css-loader', 'resolve-url-loader', 'sass-loader']
+          test: /\.(sass|scss)$/,
+          use: ['style-loader', 'css-loader',
+          {
+            loader: 'postcss-loader', // Run postcss actions
+            options: {
+              plugins: function () { // postcss plugins, can be exported to postcss.config.js
+                return [
+                  require('autoprefixer')
+                ];
+              }
+            }
+          }, 'sass-loader']
         },
         {
           test: /\.ts$/,

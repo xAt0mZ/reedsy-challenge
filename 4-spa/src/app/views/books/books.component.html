@@ -1,29 +1,35 @@
 <div class="container">
-  <h2>Top books of all time</h2>
-  <div>
-    <div ng-repeat="book in $ctrl.books">
-      <div class="grid">
-        <div class="book-info">
-          <div class="title">
-            <a ui-sref="books.details({ slug: book.Slug })" ui-sref-ops="{reload: true}"><h3>{{ $index+1 }}. {{ book.Title }}</h3> ({{ book.Rating }}/10)</a>
+  <h2 class="page-head">Top books of all time</h2>
+  <div class="books">
+    <div class="book" ng-repeat="book in $ctrl.books">
+      <div class="row">
+        <div class="col-md-9 d-flex flex-column justify-content-around">
+          <div class="row align-items-center">
+            <a class="title" ui-sref="books.details({ slug: book.Slug })" ui-sref-ops="{reload: true}">
+              {{ $index+1 }}. {{ book.Title }}</a> &nbsp;
+            <span class="rating">({{ book.Rating }}/10)</span>
           </div>
-          <span class="author">
+          <span class="author text-muted">
             {{ book.Author }}
           </span>
-          <p>
+          <p class="synopsis">
             {{ book.Synopsis | truncate: 200 }}
           </p>
-          <div>
-            <button ng-class="{active: book.UpVoted}">
+          <div class="row align-items-center">
+            <button class="col-md-2"
+              ng-class="{'upvoted-btn': book.UpVoted, 'upvote-btn': !book.UpVoted}"
+              ng-click="$ctrl.upvoteBook(book);">
               {{ book.UpVoted ? 'Upvoted' : 'Upvote' }}
             </button>
-            <span>
+            <span class="col-md-9">
               Upvoted {{ book.UpVotes }} times
             </span>
           </div>
         </div>
-        <div class="book-cover">
-          <img src="{{ book.Cover }}">
+        <div class="col-md-3">
+          <a ui-sref="books.details({ slug: book.Slug })" ui-sref-ops="{reload: true}">
+            <img class="book-cover" ng-src="{{ book.Cover }}" />
+          </a>
         </div>
       </div>
     </div>

@@ -1,7 +1,8 @@
 import { NgModule } from 'angular-ts-decorators';
 import * as Bootstrap from 'angular-ui-bootstrap';
+import 'bootstrap';
 
-import './bootstrap-override.css';
+import './bootstrap-override.sass';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
